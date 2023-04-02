@@ -1,0 +1,132 @@
+module CrafteableMRE 
+{
+    imports {
+        Base
+    }
+
+    /** Home-Made MRE **/
+
+    recipe Prepare Low-Calorie MRE
+    {
+       PotOfStew,
+       destroy CrafteableMRE.MylarBag,
+
+       Result:LowCalorieMREOpen,
+       OnCreate:Recipe.OnCreate.LowCalorieMREOpen,
+       Sound:AddItemInRecipe,
+       Time:100.0,
+       Category:Cooking,
+       SkillRequired:Cooking=5,
+       OnGiveXP:Recipe.OnGiveXP.Cooking3,
+    }
+
+    recipe Prepare High-Calorie MRE
+    {
+       PotOfStew,
+       farming.Salad,
+       PanFriedVegetables2/GriddlePanFriedVegetables/PanFriedVegetables,
+
+       destroy CrafteableMRE.MylarBag,
+
+       Result:HighCalorieMREOpen,
+       OnCreate:Recipe.OnCreate.HighCalorieMREOpen,
+       Sound:AddItemInRecipe,
+       Time:150.0,
+       Category:Cooking,
+       SkillRequired:Cooking=5,
+       OnGiveXP:Recipe.OnGiveXP.Cooking3,
+    }
+
+    recipe Seal Low-Calorie MRE
+    {
+        destroy CrafteableMRE.LowCalorieMREOpen,
+        keep CrafteableMRE.VacuumSealer,
+
+        Result:LowCalorieMRE,
+        OnTest:Recipe.OnTest.LowCalorieMREOpen,
+        OnCreate:Recipe.OnCreate.LowCalorieMRE,
+        Prop1:Source=1,
+        CanBeDoneFromFloor:true,
+        Sound:CarBatteryChargerRunning,
+        Time:100.0,
+        Category:Cooking,
+        SkillRequired:Cooking=2,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+
+    recipe Seal High-Calorie MRE
+    {
+        destroy CrafteableMRE.HighCalorieMREOpen,
+        keep CrafteableMRE.VacuumSealer,
+
+        Result:HighCalorieMRE,
+        OnTest:Recipe.OnTest.LowCalorieMREOpen,
+        OnCreate:Recipe.OnCreate.LowCalorieMRE,
+        Prop1:Source=1,
+        CanBeDoneFromFloor:true,
+        Sound:CarBatteryChargerRunning,
+        Time:120.0,
+        Category:Cooking,
+        SkillRequired:Cooking=2,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+
+    recipe Open High-Calorie MRE
+    {
+        destroy HighCalorieMRE,
+
+        Result:HighCalorieMREOpen,
+        OnCreate:Recipe.OnCreate.LowCalorieMREOpened,
+        Prop1:Source=1,
+        CanBeDoneFromFloor:true,
+        Sound:OpenBag,
+        Time:40.0,
+        StopOnWalk:false
+        isHidden:true,
+        Category:Cooking,
+        AnimNode:RipSheets,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+
+    recipe Open Low-Calorie MRE
+    {
+        destroy LowCalorieMRE,
+
+        Result:LowCalorieMREOpen,
+        OnCreate:Recipe.OnCreate.LowCalorieMREOpened,
+        Prop1:Source=1,
+        CanBeDoneFromFloor:true,
+        Sound:OpenBag,
+        Time:40.0,
+        StopOnWalk:false
+        isHidden:true,
+        Category:Cooking,
+        AnimNode:RipSheets,
+        OnGiveXP:Recipe.OnGiveXP.None,
+    }
+
+    /** Utilities **/
+
+    recipe Craft Vacuum Sealer
+    {
+        Radio.ElectricWire=2,
+        ElectronicsScrap=3,
+        Hinge=2,
+        Screws=4,
+        SmallSheetMetal=2,
+
+        keep [Recipe.GetItemTypes.Screwdriver],
+
+        Result:CrafteableMRE.VacuumSealer,
+        NoBrokenItems:true,
+        Category:Electrical,
+        AnimNode:Disassemble,
+        Prop1:Screwdriver,
+        Prop2:CDplayer,
+        Sound:Dismantle,
+        Time:180.0,
+        Category:Electrical,
+        SkillRequired:Electricity=3,
+        OnGiveXP:Recipe.OnGiveXP.RadioCraft,
+    }
+}
