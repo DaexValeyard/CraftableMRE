@@ -1,0 +1,8 @@
+ItemName_AR = {
+	ItemName_CrafteableMRE.MylarBag = "Bolsa Mylar",
+	ItemName_CrafteableMRE.VacuumSealer = "Selladora al vacío",
+	ItemName_CrafteableMRE.LowCalorieMREOpen = "MRE bajo en calorías abierto",
+	ItemName_CrafteableMRE.LowCalorieMRE = "MRE bajo en calorías",
+	ItemName_CrafteableMRE.HighCalorieMREOpen = "MRE alto en calorías abierto",
+	ItemName_CrafteableMRE.HighCalorieMRE = "MRE alto en calorías",
+}

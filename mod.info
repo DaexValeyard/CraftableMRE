@@ -1,0 +1,11 @@
+id=CraftableMRE
+name=Craftable MRE
+description=Craftable MRE for spicing up your gameplays. Created by Daex.
+authors=Daex
+
+modversion=beta0.2
+versionMin=41.78
+tags=Build 41,Food,Items,Realistic,Multiplayer,Hardmode
+
+poster=poster.png
+icon=media/textures/Item_LCMRE.png

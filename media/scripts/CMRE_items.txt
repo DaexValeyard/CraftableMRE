@@ -1,0 +1,135 @@
+module CrafteableMRE {
+    imports {
+        Base
+    }
+
+    /** Nomenclature:
+        First
+            HC: High-Calorie
+            LC: Low-Calorie
+        Second
+            H:  Home-made
+    **/
+
+    item LowCalorieMREOpen
+    {
+        DisplayName	    = Opened Low-Calorie MRE,
+        DisplayCategory = Food,
+        Weight          = 1.0,
+        Type		    = Food,
+        FoodType        = MRE,
+        CannedFood      = TRUE,
+        EatType         = can,
+		Packaged        = TRUE,
+        DaysFresh       = 7,
+		DaysTotallyRotten = 21,
+        HungerChange    = -80,
+        Calories        = 240,
+		Carbohydrates   = 65.0,
+		Lipids          = 10.0,
+		Proteins        = 50.0,
+        DangerousUncooked = TRUE,
+        IsCookable      = TRUE,
+        MinutesToCook   = 30,
+		MinutesToBurn   = 60,
+        GoodHot         = TRUE,
+        BadCold         = TRUE,
+		ReplaceOnUse    = CrafteableMRE.MylarBag,
+        Tags            = OpenMRE,
+        Icon		    = LCMRE,
+        WorldStaticModel = LCMRE,
+        EvolvedRecipeName = Low-Calorie MRE,
+    }
+
+    item LowCalorieMRE
+    {
+        DisplayName	    = Low-Calorie MRE,
+        DisplayCategory = Food,
+        Weight          = 1.0,
+        Type		    = Food,
+        FoodType        = MRE,
+        CannedFood      = TRUE,
+        CantEat         = TRUE,
+		Packaged        = TRUE,
+        Calories        = 120,
+		Carbohydrates   = 65.0,
+		Lipids          = 10.0,
+		Proteins        = 50.0,
+        Tags            = MRE,
+        Icon		    = LCMRE,
+        WorldStaticModel = LCMRE,
+    }
+
+    item HighCalorieMREOpen
+    {
+        DisplayName	    = Opened High-Calorie MRE,
+        DisplayCategory = Food,
+        Weight          = 1.5,
+        Type		    = Food,
+        FoodType        = MRE,
+        CannedFood      = TRUE,
+        EatType         = can,
+		Packaged        = TRUE,
+        DaysFresh       = 7,
+		DaysTotallyRotten = 21,
+        HungerChange    = -80,
+        Calories        = 1800,
+		Carbohydrates   = 120.0,
+		Lipids          = 50.0,
+		Proteins        = 90.0,
+        DangerousUncooked = TRUE,
+        IsCookable      = TRUE,
+        MinutesToCook   = 30,
+		MinutesToBurn   = 60,
+        GoodHot         = TRUE,
+        BadCold         = TRUE,
+		ReplaceOnUse    = CrafteableMRE.MylarBag,
+        Tags            = OpenMRE,
+        Icon		    = LCMRE,
+        WorldStaticModel = LCMRE,
+        EvolvedRecipeName = High-Calorie MRE,
+    }
+
+    item HighCalorieMRE
+    {
+        DisplayName	    = High-Calorie MRE,
+        DisplayCategory = Food,
+        Weight          = 1.5,
+        Type		    = Food,
+        FoodType        = MRE,
+        CannedFood      = TRUE,
+        CantEat         = TRUE,
+		Packaged        = TRUE,
+        Calories        = 1800,
+		Carbohydrates   = 120.0,
+		Lipids          = 50.0,
+		Proteins        = 90.0,
+        Tags            = MRE,
+        Icon		    = LCMRE,
+        WorldStaticModel = LCMRE,
+    }
+
+    item MylarBag
+    {
+        DisplayName	    = Mylar Bag,
+        DisplayCategory = Cooking,
+        Type	        = Normal,
+		Weight	        = 0.1,		
+        MetalValue      = 1,
+        Tags            = HasMetal;MREWrapper,		
+		Icon	        = MylarBag,
+		WorldStaticModel = MylarBag,
+    }
+
+    item VacuumSealer
+    {
+        DisplayName	    = Food Vacuum Sealer,
+        DisplayCategory = Cooking,
+        Type	        = Normal,
+		Weight	        = 2.0,		
+        MetalValue      = 25,
+        Tags            = HasMetal;MRESealer,		
+		Icon	        = VacuumSealer,
+		WorldStaticModel = VacuumSealer,
+    }
+}
