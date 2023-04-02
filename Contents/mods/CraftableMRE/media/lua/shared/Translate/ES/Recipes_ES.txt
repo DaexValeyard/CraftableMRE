@@ -1,9 +1,0 @@
-Recipe_ES = {
-    Recipe_Prepare_Low-Calorie_MRE = "Preparar MRE bajo en calorías",
-    Recipe_Prepare_High-Calorie_MRE = "Preparar MRE alto en calorías",
-    Recipe_Seal_Low-Calorie_MRE = "Envasar al vacío MRE bajo en calorías",
-    Recipe_Seal_High-Calorie_MRE = "Envasar al vacío MRE alto en calorías",
-    Recipe_Open_Low-Calorie_MRE = "Abrir MRE bajo en calorías",
-    Recipe_Open_High-Calorie_MRE = "Abrir MRE alto en calorías",
-    Recipe_Craft_Vacuum_Sealer = "Construir una selladora al vacío",
-}
